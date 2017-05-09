@@ -1,7 +1,8 @@
 // business logic
-function Contact(first, last) {
+function Contact(first, last, number) {
   this.firstName = first;
   this.lastName = last;
+  this.phoneNumber = number;
 }
 
 Contact.prototype.fullName = function() {
@@ -15,8 +16,9 @@ Contact.prototype.fullName = function() {
 
       var inputtedFirstName = $("input#new-first-name").val();
       var inputtedLastName = $("input#new-last-name").val();
+      var inputtedPhoneNumber = $("input#new-phone-number").val();
 
-      var newContact = new Contact(inputtedFirstName, inputtedLastName);
+      var newContact = new Contact(inputtedFirstName, inputtedLastName, inputtedPhoneNumber);
 
       $("ul#contacts").append("<li><span class='contact'>" + newContact.fullName() + "</span></li>");
 
@@ -27,6 +29,7 @@ Contact.prototype.fullName = function() {
     $("#show-contact h2").text(newContact.firstName);
     $(".first-name").text(newContact.firstName);
     $(".last-name").text(newContact.lastName);
+    $(".phone-number").text(newContact.phoneNumber);
   });
 
     });
