@@ -1,9 +1,13 @@
-// business logic
+Sha// business logic
 function Contact(first, last, number, email) {
   this.firstName = first;
   this.lastName = last;
-  this.phoneNumber = number;
-  this.emailAdress = email;
+  this.addresses = []
+}
+function Address(street, city , county){
+  this.street = street;
+  this.city = city;
+  this.county = county;
 }
 
 Contact.prototype.fullName = function() {
